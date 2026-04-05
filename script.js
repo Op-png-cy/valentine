@@ -4,12 +4,12 @@ const yesBtn = document.getElementById("yesBtn");
 const popup = document.getElementById("popup");
 const closeBtn = document.getElementById("closeBtn");
 const loveScreen = document.getElementById("loveScreen");
-    
+
 // State
 let moveCount = 0;
 let activated = false;
 
-// Move button (smarter for mobile)
+// Move "No" button
 function moveButton(event) {
 
     if (!activated) {
@@ -27,10 +27,8 @@ function moveButton(event) {
 
     let x, y;
 
-    // 👇 If touch (mobile), move away from finger
     if (event && event.touches) {
         const touch = event.touches[0];
-
         x = touch.clientX + (Math.random() * 150 - 75);
         y = touch.clientY + (Math.random() * 150 - 75);
     } else {
@@ -38,7 +36,6 @@ function moveButton(event) {
         y = Math.random() * maxY;
     }
 
-    // Keep inside screen
     x = Math.max(0, Math.min(x, maxX));
     y = Math.max(0, Math.min(y, maxY));
 
@@ -52,7 +49,7 @@ function moveButton(event) {
     }
 }
 
-// Events (desktop + mobile)
+// Events
 noBtn.addEventListener("mouseover", moveButton);
 noBtn.addEventListener("click", moveButton);
 noBtn.addEventListener("touchstart", moveButton);
@@ -74,13 +71,12 @@ closeBtn.addEventListener("click", () => {
     activated = false;
 });
 
-
-// 💖 OPTIMIZED HEARTS (better performance)
+// HEARTS
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
 
-    const hearts = ["💖", "💘", "💝", "💗", "💓"];
+    const hearts = ["💖","💘","💝","💗","💓"];
     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
     heart.style.left = Math.random() * 100 + "vw";
@@ -92,5 +88,4 @@ function createHeart() {
     setTimeout(() => heart.remove(), 7000);
 }
 
-// Slightly slower → smoother on mobile
 setInterval(createHeart, 500);
