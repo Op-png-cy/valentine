@@ -1,0 +1,111 @@
+/* PAGE */
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+}
+
+/* TITLE */
+h1 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* BIGGER BUTTONS (mobile friendly) */
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+/* YES */
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+/* NO */
+#noBtn {
+    background: #333;
+    color: white;
+    position: relative;
+
+    /* smoother + faster on mobile */
+    transition: left 0.25s ease, top 0.25s ease;
+}
+
+/* POPUP */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to right, #ffd1dc, #ffc0cb);
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* POPUP CONTENT */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* TITLE */
+.popup-content h2 {
+    color: red;
+    font-size: 26px;
+}
+
+/* IMAGE */
+.popup-content img {
+    width: 220px;
+    border-radius: 15px;
+    border: 4px solid red;
+    box-shadow: 0 0 20px red;
+}
+
+/* CLOSE BUTTON */
+#closeBtn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+
+/* 💖 HEARTS */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
