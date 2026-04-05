@@ -141,6 +141,14 @@ button {
     margin: 5px;
 }
 
+/* GIF / VIDEO STYLE */
+#loveGif {
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px black;
+}
+
 /* Fade animation */
 @keyframes fadeIn {
     from { opacity: 0; }
