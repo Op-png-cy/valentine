@@ -3,6 +3,7 @@ const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const popup = document.getElementById("popup");
 const closeBtn = document.getElementById("closeBtn");
+const loveScreen = document.getElementById("loveScreen");
 
 // State
 let moveCount = 0;
@@ -58,7 +59,7 @@ noBtn.addEventListener("touchstart", moveButton);
 
 // YES button
 yesBtn.addEventListener("click", () => {
-    alert("Yay!!! 💖 I knew it 😍");
+    loveScreen.style.display = "flex";
 });
 
 // Close popup
