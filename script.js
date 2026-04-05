@@ -4,7 +4,7 @@ const yesBtn = document.getElementById("yesBtn");
 const popup = document.getElementById("popup");
 const closeBtn = document.getElementById("closeBtn");
 const loveScreen = document.getElementById("loveScreen");
-
+    
 // State
 let moveCount = 0;
 let activated = false;
