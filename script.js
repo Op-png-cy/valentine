@@ -50,10 +50,16 @@ function moveButton(event) {
 }
 
 // Events
-noBtn.addEventListener("mouseover", moveButton);
-noBtn.addEventListener("click", moveButton);
-noBtn.addEventListener("touchstart", moveButton);
+// Detect mobile
+const isMobile = "ontouchstart" in window;
 
+// Only ONE event system
+if (isMobile) {
+    noBtn.addEventListener("touchstart", moveButton);
+} else {
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("click", moveButton);
+}
 // YES button
 yesBtn.addEventListener("click", () => {
     loveScreen.style.display = "flex";
